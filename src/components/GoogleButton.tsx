@@ -1,23 +1,22 @@
-import React from 'react';
+import { GoogleOAuthProvider, GoogleLogin } from '@react-oauth/google';
 
-interface ButtonProps {
-  onClick?: () => void;
-}
+const clientId = import.meta.env.VITE_GOOGLE_CLIENT_ID;
 
-const Button: React.FC<ButtonProps> = ({ onClick }) => {
+const GoogleButton = () => {
   return (
     <div className='flex flex-col items-stretch text-center'>
-      <button
-        onClick={onClick}
-        className='flex flex-col items-center border-white border-1 p-2 rounded-sm cursor-pointer'
-      >
-        <div className='flex items-center gap-x-2'>
-          <img src="public\google-ico.svg" alt="Ícone do Google" width='18px' />
-          Entrar com o Google
-        </div>
-      </button>
+      <GoogleOAuthProvider clientId={clientId}>
+        <GoogleLogin
+          onSuccess={credentialResponse => {
+            console.log(credentialResponse);
+          }}
+          onError={() => {
+            console.log('Login Failed');
+          }}
+        />
+      </GoogleOAuthProvider>
     </div>
   );
 };
 
-export default Button;
+export default GoogleButton;
