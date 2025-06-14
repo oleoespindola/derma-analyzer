@@ -17,6 +17,11 @@
     --color-soft-gray: #242424;
 }
 
+#root {
+    width: 100%;
+    height: 100vh;
+}
+
 body {
     min-width: 100%;
     height: 100vh;
