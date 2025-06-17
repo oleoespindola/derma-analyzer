@@ -15,7 +15,7 @@ const CropImg: React.FC<CropImgProps> = ({ imageSrc, onCancel }) => {
 
     return (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-white/25">
-            <div className="inset-0 flex flex-col gap-y-3 items-center justify-center p-3 rounded-lg bg-[#070707]">
+            <div className="inset-0 flex flex-col gap-y-3 items-center justify-center p-3 rounded-lg bg-[var(--color-dark-gray)]">
                 <div className="relative w-md aspect-square">
                     {imageSrc && (
                         <Cropper
@@ -34,7 +34,7 @@ const CropImg: React.FC<CropImgProps> = ({ imageSrc, onCancel }) => {
                         onClick={onCancel}
                         className="pt-2 pb-2 pr-5 pl-5
                             bg-[var(--color-soft-gray)] cursor-pointer rounded-md shadow-lg 
-                            hover:bg-[var(--color-dark-gray)]"
+                            hover:bg-violet-500"
                     >Cancelar</button>
                     <Button text="Analisar"></Button>
                 </div>
