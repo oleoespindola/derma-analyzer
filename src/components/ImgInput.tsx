@@ -1,5 +1,5 @@
 import { useState } from "react"
-import CropImg from "../features/analyzer/CropImg"
+import CropImg from "../features/analyzer/Prediction"
 
 const ImgInput = () => {
   const [imageSrc, setImageSrc] = useState<string | null>(null)

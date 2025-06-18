@@ -5,7 +5,7 @@ interface WarningPropos {
 const Warning: React.FC<WarningPropos> = ({ text }) => {
     return (
         <div className="
-        p-2 gap-x-2
+        mt-3 p-2 gap-x-2
         flex justify-center items-center w-full 
         border-1 border-indigo-500
         text-indigo-600

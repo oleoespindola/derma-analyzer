@@ -1,5 +1,7 @@
 import { useNavigate } from "react-router";
 import ImgButton from "../components/ImgInput";
+import GitHub from "../components/github";
+import History from "../features/analyzer/History";
 
 const Analyzer = () => {
     const navigate = useNavigate();
@@ -9,7 +11,10 @@ const Analyzer = () => {
                 
                 <div className="text-sm"><p>Olá, {localStorage.getItem('name')}</p></div>
                 
-                <div className="">
+
+                <div className="flex flex-col gap-y-2">
+                    <GitHub></GitHub>
+                    <div className="border border-[var(--color-soft-gray)]" ></div>
                     <a className="
                         flex w-full text-sm cursor-pointer gap-x-1 justify-center
                     "    
@@ -25,7 +30,9 @@ const Analyzer = () => {
             </div>
             <div className="flex h-full w-10/12 p-5">
                 <div className="flex flex-col w-full">
-                    <div className="flex w-full h-11/12"></div>
+                    <div className="flex w-full h-11/12">
+                        <History></History>
+                    </div>
                     <div className="flex w-full h-1/12 justify-end items-center">
                         <ImgButton></ImgButton>
                     </div>
