@@ -10,6 +10,15 @@ interface CropImgProps {
     onCancel: () => void
 }
 
+/**
+ * Recorta uma imagem dada com base nas dimens es de pixels especificadas e retorna a imagem recortada como um Blob.
+ *
+ * @param imageSrc - A URL da imagem a ser recortada.
+ * @param croppedAreaPixels - Um objeto representando a  rea da imagem a ser recortada, incluindo as coordenadas x e y, bem como a largura e a altura.
+ * @returns Uma promessa que resolve para um Blob da imagem recortada no formato JPEG.
+ * @throws Um erro se o contexto de renderiza o 2D n o for obtido com sucesso do canvas.
+ */
+
 async function cropedImage(
     imageSrc: string,
     croppedAreaPixels: Area
@@ -44,6 +53,18 @@ async function cropedImage(
     })
 
 }
+
+/**
+ * CropImg component allows users to select and crop an image, then submit it for analysis.
+ *
+ * @param {string | null} imageSrc - The source URL of the image to be cropped.
+ * @param {function} onCancel - Function to call when the user cancels the cropping action.
+ *
+ * @example
+ * <CropImg imageSrc={imageURL} onCancel={handleCancel} />
+ *
+ * @returns A modal interface with image cropping functionality and an option to submit the cropped image for prediction analysis.
+ */
 
 const CropImg: React.FC<CropImgProps> = ({ imageSrc, onCancel }) => {
     const [croppedAreaPixels, setCroppedAreaPixels] = useState<Area | null>(null)

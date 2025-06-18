@@ -2,12 +2,12 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import '/src/styles/styles.css';
 
-import Welcome from './pages/Welcome';
-import Auth from './pages/Auth';
-import Analyzer from './pages/Analyzer';
+import Welcome from './views/Welcome';
+import Auth from './views/Auth';
+import Analyzer from './views/Analyzer';
 
-import WithAuth from './components/withAuth';
-import WithoutAuth from './components/withoutAuth';
+import WithAuth from './guards/PrivateRoute';
+import WithoutAuth from './guards/PublicRoute';
 
 const App = () => {
   return (

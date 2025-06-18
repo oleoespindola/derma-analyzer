@@ -6,6 +6,14 @@ interface historyProps {
     prediction: string
 }
 
+/**
+ * Componente que renderiza um item do histórico de análises.
+ * Ele precisa do `imageURL`, `createdAt` e `prediction` para renderizar o item do histórico corretamente.
+ * 
+ * @param {string} imageURL - URL da imagem enviada pelo usuário para análise.
+ * @param {string} createdAt - Data e hora que a análise foi realizada.
+ * @param {string} prediction - Porcentagem de chance de câncer de pele na imagem analisada.
+ */
 const HistoryComponent: React.FC<historyProps> = ({ imageURL, createdAt, prediction }) => {
     const textAnalysis = () => {
         const numericPrediction = Number(prediction.replace('%', '')) / 100;

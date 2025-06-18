@@ -5,7 +5,7 @@ interface Props {
     children: ReactNode
 }
 
-const WithoutAuth: React.FC<Props> = ({children}) => {
+const PublicRoute: React.FC<Props> = ({children}) => {
     const token = localStorage.getItem('token');
 
     if (token) {
@@ -15,4 +15,4 @@ const WithoutAuth: React.FC<Props> = ({children}) => {
     return children
 }   
 
-export default WithoutAuth
+export default PublicRoute

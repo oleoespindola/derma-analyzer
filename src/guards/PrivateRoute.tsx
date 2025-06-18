@@ -5,7 +5,7 @@ interface Props {
     children: ReactNode
 }
 
-const WithAuth: React.FC<Props> = ({children}) => {
+const PrivateRoute: React.FC<Props> = ({children}) => {
     const token = localStorage.getItem('token');
 
     if (!token) {
@@ -15,4 +15,4 @@ const WithAuth: React.FC<Props> = ({children}) => {
     return children
 }   
 
-export default WithAuth
+export default PrivateRoute
