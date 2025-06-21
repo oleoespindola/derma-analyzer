@@ -5,13 +5,14 @@ interface WarningPropos {
 const Warning: React.FC<WarningPropos> = ({ text }) => {
     return (
         <div className="
-        mt-3 p-2 gap-x-2
-        flex justify-center items-center w-full 
-        border-1 border-indigo-500
-        text-indigo-600
-        rounded-md animate-bounce
+        gap-x-2 pt-1 pb-1
+        flex justify-center items-center w-full
+        bg-yellow-100 
+        border-2 border-yellow-700
+        text-yellow-700
+        rounded-md
         ">
-            <img className="" src="./src/assets/warning.svg" alt="" />
+            <img className="animate-ping" width={12} src="/warning.svg" alt="" />
             {text}
         </div>
     )

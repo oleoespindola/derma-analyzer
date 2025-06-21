@@ -7,7 +7,7 @@ interface ButtonProps {
 
 const Link: React.FC<ButtonProps> = ({ text, onClick }) => {
   return (
-    <div className='flex flex-col items-center'>
+    <div className='flex flex-col items-center text-center'>
       <a
         onClick={onClick}
         className='

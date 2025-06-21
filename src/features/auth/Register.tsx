@@ -46,12 +46,20 @@ const Login: React.FC = () => {
         setSync(false)
     }
 
+    const verifyPassword = (password: string) => {
+        if (/[^A-Za-z0-9]/.test(password)) {
+            setMessage('Caracter inválido');
+        } else {
+            setMessage(null);
+        }
+    }
+
     return (
         <div className="flex flex-col gap-y-5 items-stretch">
             {message && <Warning text={message}></Warning>}
-            <Input placeholder={'Nome'} type="text" value={name} onChange={e => setName(e.target.value)}></Input>
+            <Input placeholder={'Nome'} type="text" value={name} onChange={e => {setName(e.target.value)}}></Input>
             <Input placeholder={'Email'} type="email" value={email} onChange={e => setEmail(e.target.value)}></Input>
-            <Input placeholder={'Senha'} type="password" value={password} onChange={e => setPassword(e.target.value)}></Input>
+            <Input placeholder={'Senha'} type="password" value={password} onChange={e => {setPassword(e.target.value); verifyPassword(e.target.value)}}></Input>
             <Button text="Cadastrar" onClick={handleRegister} sync={sync}></Button>
         </div>
     )

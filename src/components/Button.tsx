@@ -20,7 +20,7 @@ const Button: React.FC<ButtonProps> = ({ text, onClick, sync }) => {
         {sync? 
         <div className='animate-spin 
         flex justify-center text-center items-center'>
-          <img src="./src/assets/sync.svg" alt="sincronizando" />
+          <img src="/sync.svg" alt="sincronizando" />
         </div> : text}
       </button>
     </div>
