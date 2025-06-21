@@ -7,7 +7,7 @@ const Analyzer = () => {
     const navigate = useNavigate();
     return (
         <div className="flex h-full w-full">
-            <div className="flex flex-col justify-between h-full w-2/12 bg-[var(--color-dark-gray)] p-3">
+            <div className="hidden md:flex lg:flex flex-col justify-between h-full w-2/12 bg-[var(--color-dark-gray)] p-3">
                 
                 <div className="text-sm"><p>Olá, {localStorage.getItem('name')}</p></div>
                 
@@ -22,18 +22,28 @@ const Analyzer = () => {
                         localStorage.clear()
                         navigate('/')
                     }}>
-                        <img src="./src/assets/logout.svg" alt="Sair" width={20} />
+                        <img src="/logout.svg" alt="Sair" width={20} />
                         sair
                     </a>
                 </div>
 
             </div>
-            <div className="flex h-full w-10/12 p-5">
+            <div className="flex h-full md:w-10/12 lg:w-10/12 p-5">
                 <div className="flex flex-col w-full">
-                    <div className="flex w-full h-11/12">
+                    <div className="flex w-full h-2/12 justify-center md:hidden, lg:hidden"><img src="derma-text-ico.svg" alt=""/></div>
+                    <div className="flex w-full h-9/12 md md:h-11/12 lg:h-11/12">
                         <History></History>
                     </div>
-                    <div className="flex w-full h-1/12 justify-end items-center">
+                    <div className="flex w-full h-1/12 justify-around md:justify-end lg:justify-end items-center">
+                        <a className="
+                            md:hidden lg:hiddenflex text-sm cursor-pointer gap-x-1 justify-start w-full flex 
+                        "    
+                        onClick={() => {
+                            localStorage.clear()
+                            navigate('/')
+                        }}>
+                            <img src="/logout.svg" alt="Sair" width={20} />
+                        </a>
                         <ImgButton></ImgButton>
                     </div>
                 </div>

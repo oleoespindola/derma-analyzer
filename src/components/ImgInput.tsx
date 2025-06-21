@@ -23,7 +23,7 @@ const ImgInput = () => {
             hover:bg-gradient-to-bl hover:from-violet-500
             rounded-full shadow-lg'
           >
-            <img src="./src/assets/photo_camera.svg" alt="Enviar Imagem" />
+            <img src="/photo_camera.svg" alt="Enviar Imagem" />
             <input
               type="file"
               accept='image/*'
