@@ -87,7 +87,6 @@ const CropImg: React.FC<CropImgProps> = ({ imageSrc, onCancel }) => {
 
             const response = await api.post('/users/predict', formData)
             console.log(response.status);
-            navigate('/analyzer', { replace: true });
             window.location.reload();
 
         } catch (error: any) {

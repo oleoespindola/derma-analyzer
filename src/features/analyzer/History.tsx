@@ -25,7 +25,7 @@ const History = () => {
             const response = await api.get('users/history');
             setHistory(response.data);
         } catch (error: any) {
-            if (error.message.status === 401) {
+            if (error.response.status === 401) {
                 localStorage.clear();
                 navigate('/auth')
             } else if (error.response) {
